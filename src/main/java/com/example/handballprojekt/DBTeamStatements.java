@@ -64,6 +64,7 @@ import java.util.List;
 
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
+                return false;
             }
             return true;
         }
@@ -90,7 +91,7 @@ import java.util.List;
                     teams.add(team);
                 }
             } catch (Exception e) {
-                System.out.println("Error while retrieving teams: " + e.getMessage());
+                System.out.println(e.getMessage());
             }
 
             return teams;
