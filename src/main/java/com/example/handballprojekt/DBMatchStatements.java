@@ -46,12 +46,28 @@ public class DBMatchStatements {
         return true;
     }
 
+    public String getTeamNameByID(int teamID) {
+        String teamName = null;
+        try {
+            String sql = "SELECT Name FROM Team WHERE TeamID = " + teamID;
+            Statement statement = db.dbConnect().createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                teamName = resultSet.getString("Name");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return teamName;
+    }
+
     public List<Match> getAllMatches() {
         List<Match> matches = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM Match";
-
+            // Hent alle matches fra databasen
+            String sql = "SELECT MatchID, HomeTeam, AwayTeam FROM Match";
             Statement statement = db.dbConnect().createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
@@ -60,16 +76,23 @@ public class DBMatchStatements {
                 int homeTeamID = resultSet.getInt("HomeTeam");
                 int awayTeamID = resultSet.getInt("AwayTeam");
 
-                Match match = new Match(matchID, homeTeamID, awayTeamID);
+                // Slå holdnavne op baseret på HomeTeamID og AwayTeamID
+                String homeTeamName = getTeamNameByID(homeTeamID);
+                String awayTeamName = getTeamNameByID(awayTeamID);
+
+                // Opret og tilføj Match-objekt til listen
+                Match match = new Match(matchID, homeTeamID, awayTeamID, homeTeamName, awayTeamName);
                 matches.add(match);
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Fejl i getAllMatches: " + e.getMessage());
         }
 
         return matches;
     }
 
-
 }
+
+
+
 

@@ -8,7 +8,8 @@ public class Match {
     private String HomeTeamName;
     private String AwayTeamName;
 
-    public Match(int MatchID, int HomeTeamID, int AwayTeamID) {
+
+    public Match(int MatchID, int HomeTeamID, int AwayTeamID, String HomeTeamName, String AwayTeamName) {
         this.MatchID = MatchID;
         this.HomeTeamID = HomeTeamID;
         this.AwayTeamID = AwayTeamID;
@@ -16,14 +17,17 @@ public class Match {
         this.AwayTeamName = AwayTeamName;
 
     }
+
+    public Match(int matchID, int homeTeamID, int awayTeamID) {
+    }
+
     public int getMatchID() {return MatchID;}
 
     public int getHomeTeamID() {return HomeTeamID;}
 
     public int getAwayTeamID() {return AwayTeamID;}
 
-    public String getHomeTeamName() {return HomeTeamName;}
-
-    public String getAwayTeamName() {return AwayTeamName;}
+    public String toString() {
+        return "Match ID: " + MatchID + ", Home Team: " + HomeTeamName + ", Away Team: " + AwayTeamName;}
 
 }

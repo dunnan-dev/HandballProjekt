@@ -36,6 +36,9 @@ import java.util.List;
             return team;
         }
 
+
+
+
         public Boolean updateTeamByID(int id, int score, int wins, int loss, int draw) {
             try {
                 String sql = "UPDATE Team SET Score = " + score +
