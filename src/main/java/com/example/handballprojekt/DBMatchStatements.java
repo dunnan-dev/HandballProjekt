@@ -22,8 +22,6 @@ public class DBMatchStatements {
                 int matchID = resultSet.getInt("MatchID");
                 int homeTeamID = resultSet.getInt("HomeTeamID");
                 int awayTeamID = resultSet.getInt("AwayTeamID");
-                String homeTeamName = resultSet.getString("HomeTeamName");
-                String awayTeamName = resultSet.getString("AwayTeamName");
 
                 match = new Match(matchID, homeTeamID, awayTeamID);
             }
