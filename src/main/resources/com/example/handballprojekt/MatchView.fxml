@@ -22,7 +22,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button fx:id="bn_Back" layoutX="529.0" layoutY="304.0" mnemonicParsing="false" onAction="#onAction_ReturnToFrontpage" text="Tilbage" />
+                  <Button fx:id="bn_goToFrontPage" layoutX="529.0" layoutY="304.0" mnemonicParsing="false" onAction="#onAction_goToFrontpage" text="Tilbage" />
                   <Button fx:id="bn_goToCreateMatch" layoutX="14.0" layoutY="304.0" mnemonicParsing="false" onAction="#onAction_goToCreateMatch" text="Tilføj kamp" />
                   <ListView fx:id="list_Matches" layoutX="158.0" layoutY="10.0" prefHeight="326.0" prefWidth="282.0" />
                </children>

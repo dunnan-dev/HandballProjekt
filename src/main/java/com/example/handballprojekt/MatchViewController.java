@@ -15,27 +15,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MatchViewController extends Application {
+public class MatchViewController {
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        try {
-            // Indlæs MatchView.fxml som den første scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchView.fxml"));
-            Parent root = loader.load();
-
-            // Opret en scene og vis hovedvinduet
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Handball Project");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
-    private Button bn_Back;
+    private Button bn_goToFrontPage;
 
     @FXML
     private Button bn_AddMatch;
@@ -60,6 +44,7 @@ public class MatchViewController extends Application {
             e.printStackTrace();
         }
     }
+
     @FXML
     private ListView<Match> list_Matches;
 
@@ -71,7 +56,22 @@ public class MatchViewController extends Application {
         ObservableList<Match> matches = FXCollections.observableArrayList(db.getAllMatches());
         list_Matches.setItems(matches);
     }
-    public static void main(String[] args) {
-        launch(args); // Start JavaFX-applikationen
+
+    @FXML
+    void onAction_goToFrontpage(ActionEvent event) {
+        try {
+            // Indlæs CreateMatch.fxml for at skifte scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
+            Parent root = loader.load();
+
+            // Få fat i det nuværende vindue og skift scenen
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
