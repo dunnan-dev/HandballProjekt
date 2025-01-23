@@ -20,6 +20,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+//Tevfik
+
 // Controller-klasse til forsiden (Frontpage) i brugergrænsefladen
 public class FrontpageController implements Initializable {
 

@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.example.handballprojekt.DBO.TeamDBO;
 
+//Árni
+
 // Klasse, der indeholder metoder til at udføre databaseoperationer for "Team"-tabellen
 public class DBTeamStatements {
     DBConnection db = new DBConnection(); // Instans af databaseforbindelse

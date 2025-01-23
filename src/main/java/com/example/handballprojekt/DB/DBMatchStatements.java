@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+//Árni
+
 // Klasse til at håndtere databaseoperationer for "Match"-tabellen
 public class DBMatchStatements {
     DBConnection db = new DBConnection(); // Databaseforbindelse

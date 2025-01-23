@@ -1,5 +1,7 @@
 package com.example.handballprojekt.DBO;
 
+//Árni + Michael
+
 // Data Bean Object (DBO) til at repræsentere et hold
 public class TeamDBO {
 

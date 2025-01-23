@@ -12,6 +12,8 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 
+//Árni
+
 // Controller-klasse til visning og håndtering af kampe i applikationen
 public class MatchViewController {
 

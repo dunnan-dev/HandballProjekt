@@ -1,5 +1,7 @@
 package com.example.handballprojekt.DBO;
 
+//Árni + Oliver
+
 public class MatchDBO {
 
     private int MatchID; // Kampens unikke ID

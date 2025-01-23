@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+//Tevfik
+
 // Hovedklassen for JavaFX-applikationen, der styrer opstarten
 public class Main extends Application {
 

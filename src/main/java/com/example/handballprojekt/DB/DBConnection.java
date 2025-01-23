@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Árni
+
 // Klasse til håndtering af databaseforbindelse
 public class DBConnection {
     private static Connection connection; // Statisk forbindelse, så den kan genbruges
