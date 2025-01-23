@@ -31,14 +31,14 @@ public class DBMatchStatements {
         return match;
     }
 
-    public boolean CreateMatch(String homeTeam, String awayTeam) {
+    public boolean CreateMatch(int homeTeamId, int awayTeamId) {
         try {
-            String sql = "INSERT INTO Match (HomeTeam, AwayTeam) " +
-                    "VALUES ('" + homeTeam + "', '" + awayTeam + "')";
+            // Dynamisk SQL til indsættelse af kamp
+            String sql = "INSERT INTO Match (HomeTeam, AwayTeam) VALUES (" + homeTeamId + ", " + awayTeamId + ")";
 
+            // Udfør SQL-forespørgslen
             Statement statement = db.dbConnect().createStatement();
             statement.executeUpdate(sql);
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
@@ -90,7 +90,6 @@ public class DBMatchStatements {
 
         return matches;
     }
-
 }
 
 

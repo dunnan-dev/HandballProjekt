@@ -23,8 +23,8 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ChoiceBox layoutX="14.0" layoutY="65.0" prefHeight="35.0" prefWidth="250.0" />
-                  <ChoiceBox layoutX="334.0" layoutY="65.0" prefHeight="35.0" prefWidth="250.0" />
+                  <ChoiceBox fx:id="homeTeamChoiceBox" layoutX="14.0" layoutY="65.0" prefHeight="35.0" prefWidth="250.0" />
+                  <ChoiceBox fx:id="awayTeamChoiceBox" layoutX="334.0" layoutY="65.0" prefHeight="35.0" prefWidth="250.0" />
                   <Label layoutX="285.0" layoutY="65.0" text="VS">
                      <font>
                         <Font size="24.0" />
@@ -45,7 +45,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="502.0" layoutY="303.0" mnemonicParsing="false" text="Tilføj hold">
+                  <Button fx:id="bn_createMatch" layoutX="502.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleCreateMatch" text="Tilføj kamp">
                      <font>
                         <Font size="14.0" />
                      </font>

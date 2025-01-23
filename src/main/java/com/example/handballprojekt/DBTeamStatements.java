@@ -99,6 +99,25 @@ import java.util.List;
 
             return teams;
         }
+        public int getTeamIdByName(String teamName) {
+            int teamId = -1;
+            try {
+                // SQL til at finde TeamID baseret på navn
+                String sql = "SELECT TeamID FROM Team WHERE Name = '" + teamName + "'";
+
+                // Udfør forespørgslen
+                Statement statement = db.dbConnect().createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+
+                // Hent TeamID, hvis det findes
+                if (resultSet.next()) {
+                    teamId = resultSet.getInt("TeamID");
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return teamId;
+        }
 
 
     }
