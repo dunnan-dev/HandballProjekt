@@ -1,4 +1,4 @@
-package com.example.handballprojekt;
+package com.example.handballprojekt.DB;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,14 +6,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.handballprojekt.DBO.TeamDBO;
+
     
    
 
     public class DBTeamStatements {
         DBConnection db = new DBConnection();
 
-        public Team getTeamByID(int id) {
-            Team team = null;
+        public TeamDBO getTeamByID(int id) {
+            TeamDBO team = null;
             try {
                 String sql = "select * from Team where TeamID = " + id;
 
@@ -28,7 +30,7 @@ import java.util.List;
                     int loss = resultSet.getInt("Loss");
                     int draw = resultSet.getInt("Draw");
 
-                    team = new Team(teamID, teamName, score, wins, loss, draw);
+                    team = new TeamDBO(teamID, teamName, score, wins, loss, draw);
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -54,7 +56,7 @@ import java.util.List;
             }
             return true;
         }
-        public boolean CreateTeam(String name) {
+        public void CreateTeam(String name) {
             try {
                 String sql = "INSERT INTO Team (Name, Score, Wins, Loss, Draw) " +
                         "VALUES ('" + name + "', 0, 0, 0, 0)";
@@ -65,12 +67,11 @@ import java.util.List;
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
-            return true;
         }
 
 
-        public List<Team> getAllTeams() {
-            List<Team> teams = new ArrayList<>();
+        public List<TeamDBO> getAllTeams() {
+            List<TeamDBO> teams = new ArrayList<>();
 
             try {
                 String sql = "SELECT * FROM Team";
@@ -86,7 +87,7 @@ import java.util.List;
                     int losses = resultSet.getInt("Loss");
                     int draws = resultSet.getInt("Draw");
 
-                    Team team = new Team(teamID, name, score, wins, losses, draws);
+                    TeamDBO team = new TeamDBO(teamID, name, score, wins, losses, draws);
                     teams.add(team);
                 }
             } catch (Exception e) {
@@ -96,7 +97,23 @@ import java.util.List;
             return teams;
         }
 
+            public int getTeamIdByName(String teamName){
+                int teamId = -1;
+                try {
+                    // SQL til at finde TeamID baseret på navn
+                    String sql = "SELECT TeamID FROM Team WHERE Name = '" + teamName + "'";
 
-    }
+                    // Udfør forespørgslen
+                    Statement statement = db.dbConnect().createStatement();
+                    ResultSet resultSet = statement.executeQuery(sql);
 
-
+                    // Hent TeamID, hvis det findes
+                    if (resultSet.next()) {
+                        teamId = resultSet.getInt("TeamID");
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+                return teamId;
+            }
+        }

@@ -11,7 +11,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="337.0" prefWidth="397.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.handballprojekt.hanballLeague">
+<VBox alignment="CENTER" prefHeight="337.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.handballprojekt.Controllers.FrontpageController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -26,7 +26,7 @@
        </Menu>
        <Menu mnemonicParsing="false" text="Kampe">
          <items>
-           <MenuItem mnemonicParsing="false" text="Delete" />
+           <MenuItem mnemonicParsing="false" text="kamp liste" />
          </items>
        </Menu>
        <Menu mnemonicParsing="false" text="Resultater">
@@ -36,17 +36,21 @@
        </Menu>
      </menus>
    </MenuBar>
-   <TableView prefHeight="200.0" prefWidth="200.0">
+   <TableView fx:id="table_Teams" prefHeight="200.0" prefWidth="200.0">
      <columns>
-       <TableColumn prefWidth="75.0" text="Holdnavn" />
-       <TableColumn prefWidth="75.0" text="Antalpoint" />
-       <TableColumn prefWidth="104.80000305175781" text="Antal sejre/tab" />
+       <TableColumn fx:id="col_teamID" prefWidth="75.0" text="TeamID" />
+       <TableColumn fx:id="col_Name" prefWidth="75.0" text="Name" />
+       <TableColumn fx:id="col_Score" prefWidth="104.80000305175781" text="Score" />
+         <TableColumn fx:id="col_Wins" prefWidth="104.80000305175781" text="Wins" />
+         <TableColumn fx:id="col_Loss" prefWidth="104.80000305175781" text="Loss" />
+         <TableColumn fx:id="col_Draw" prefWidth="104.80000305175781" text="Draw" />
      </columns>
    </TableView>
    <ButtonBar prefHeight="26.0" prefWidth="182.0">
      <buttons>
        <Button fx:id="btn_createTeam" mnemonicParsing="false" onAction="#on_createTeam" prefHeight="12.0" text="Tilføj Hold" />
-         <Button fx:id="btn_deleteTeam" mnemonicParsing="false" prefHeight="12.0" text="Fjern Hold" />
+         <Button fx:id="btn_deleteTeam" mnemonicParsing="false" onAction="#on_deleteTeam" prefHeight="12.0" text="Fjern Hold" />
+         <Button fx:id="bn_goToMatchView" mnemonicParsing="false" onAction="#onAction_goToMatchView" text="Kampe" />
      </buttons>
    </ButtonBar>
 </VBox>
