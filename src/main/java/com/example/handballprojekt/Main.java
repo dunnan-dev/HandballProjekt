@@ -21,7 +21,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 650, 240);
 
         // Sætter titlen på applikationsvinduet
-        stage.setTitle("Hello!");
+        stage.setTitle("Håndball Projekt");
 
         // Tilknytter scenen til vinduet (Stage)
         stage.setScene(scene);
