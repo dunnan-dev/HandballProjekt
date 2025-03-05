@@ -2,7 +2,7 @@ package com.example.handballprojekt.DBO;
 
 //Árni + Michael
 
-// Data Bean Object (DBO) til at repræsentere et hold
+// Database Object (DBO) til at repræsentere et hold
 public class TeamDBO {
 
     private int teamID; // Unikt ID for holdet

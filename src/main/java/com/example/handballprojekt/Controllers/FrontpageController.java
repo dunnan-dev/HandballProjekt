@@ -53,6 +53,9 @@ public class FrontpageController implements Initializable {
     private TableColumn<TeamDBO, Integer> col_Draw; // Kolonne til at vise antal uafgjorte kampe
 
     @FXML
+    private TableColumn<TeamDBO, Integer> col_CoachID;
+
+    @FXML
     private TableView<TeamDBO> table_Teams; // Tabel til at vise alle holdene
 
     // Initialiseringsmetode, der kører automatisk, når scenen indlæses
@@ -75,6 +78,7 @@ public class FrontpageController implements Initializable {
         col_Wins.setCellValueFactory(new PropertyValueFactory<>("wins"));
         col_Loss.setCellValueFactory(new PropertyValueFactory<>("losses"));
         col_Draw.setCellValueFactory(new PropertyValueFactory<>("draws"));
+        col_Draw.setCellValueFactory(new PropertyValueFactory<>("CoachID"));
     }
 
     // Skifter vindue til "Create Team"-siden

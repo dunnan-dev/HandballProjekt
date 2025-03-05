@@ -22,6 +22,7 @@
          <TableColumn fx:id="col_Wins" prefWidth="104.80000305175781" text="Wins" />
          <TableColumn fx:id="col_Loss" prefWidth="104.80000305175781" text="Loss" />
          <TableColumn fx:id="col_Draw" prefWidth="104.80000305175781" text="Draw" />
+         <TableColumn fx:id="col_CoachID" prefWidth="189.0" text="CoachID" />
      </columns>
    </TableView>
    <ButtonBar prefHeight="26.0" prefWidth="182.0">
@@ -29,6 +30,7 @@
        <Button fx:id="btn_createTeam" mnemonicParsing="false" onAction="#on_createTeam" prefHeight="12.0" text="Tilføj Hold" />
          <Button fx:id="btn_deleteTeam" mnemonicParsing="false" onAction="#on_deleteTeam" prefHeight="12.0" text="Fjern Hold" />
          <Button fx:id="bn_goToMatchView" mnemonicParsing="false" onAction="#onAction_goToMatchView" text="Kampe" />
+         <Button fx:id="bn_GoToCoachView" mnemonicParsing="false" text="Træner" />
      </buttons>
    </ButtonBar>
 </VBox>
