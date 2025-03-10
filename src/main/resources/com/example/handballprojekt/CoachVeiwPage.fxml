@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.handballprojekt.CoachVeiw"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.handballprojekt.CoachVeiwController">
+   <children>
+      <Pane prefHeight="394.0" prefWidth="600.0">
+         <children>
+            <TableView layoutX="9.0" layoutY="46.0" prefHeight="295.0" prefWidth="579.0">
+              <columns>
+                <TableColumn prefWidth="290.0" text="Træner" />
+                <TableColumn minWidth="0.0" prefWidth="288.0" text="Hold" />
+              </columns>
+            </TableView>
+            <Text layoutX="266.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trænere">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="bn_CreateCoach" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#onAction_CreateCoach" text="Tilføj Træner" />
+            <Button fx:id="bn_asignCoach" layoutX="105.0" layoutY="355.0" mnemonicParsing="false" onAction="#onAction_asignCoach" text="Tilknyt Træner" />
+            <Button fx:id="bn_GoToFrontPage" layoutX="531.0" layoutY="355.0" mnemonicParsing="false" onAction="#onAction_GoToFrontPage" text="Tilbage" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

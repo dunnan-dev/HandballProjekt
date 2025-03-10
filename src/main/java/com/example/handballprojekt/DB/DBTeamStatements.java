@@ -33,8 +33,9 @@ public class DBTeamStatements {
                 int wins = resultSet.getInt("Wins");
                 int loss = resultSet.getInt("Loss");
                 int draw = resultSet.getInt("Draw");
+                int Coach = resultSet.getInt("Coach");
 
-                team = new TeamDBO(teamID, teamName, score, wins, loss, draw);
+                team = new TeamDBO(teamID, teamName, score, wins, loss, draw, Coach);
             }
         } catch (Exception e) {
             // Logger fejlmeddelelse, hvis noget går galt
@@ -103,8 +104,9 @@ public class DBTeamStatements {
                 int wins = resultSet.getInt("Wins");
                 int losses = resultSet.getInt("Loss");
                 int draws = resultSet.getInt("Draw");
+                int Coach = resultSet.getInt("Coach");
 
-                TeamDBO team = new TeamDBO(teamID, name, score, wins, losses, draws);
+                TeamDBO team = new TeamDBO(teamID, name, score, wins, losses, draws, Coach);
                 teams.add(team);
             }
         } catch (Exception e) {

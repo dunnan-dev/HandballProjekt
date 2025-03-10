@@ -11,15 +11,17 @@ public class TeamDBO {
     private int wins; // Antal sejre for holdet
     private int losses; // Antal nederlag for holdet
     private int draws; // Antal uafgjorte kampe for holdet
+    private int Coach;
 
     // Konstruktor, der initialiserer alle felter
-    public TeamDBO(int teamID, String name, int score, int wins, int losses, int draws) {
+    public TeamDBO(int teamID, String name, int score, int wins, int losses, int draws, int Coach) {
         this.teamID = teamID;
         this.name = name;
         this.score = score;
         this.wins = wins;
         this.losses = losses;
         this.draws = draws;
+        this.Coach = Coach;
     }
 
     // Getter-metode for teamID
@@ -50,5 +52,9 @@ public class TeamDBO {
     // Getter-metode for uafgjorte
     public int getDraws() {
         return draws;
+    }
+
+    public int getCoach() {
+        return Coach;
     }
 }
