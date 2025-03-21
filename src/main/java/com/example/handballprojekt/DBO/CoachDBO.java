@@ -15,4 +15,12 @@ public class CoachDBO {
     public String getCoachName() {
         return CoachName;
     }
+
+    public void setCoachID(int coachID) {
+        CoachID = coachID;
+    }
+
+    public void setCoachName(String coachName) {
+        CoachName = coachName;
+    }
 }
